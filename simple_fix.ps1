@@ -1,0 +1,15 @@
+Copy-Item "index_backup2.htm" "index_new.htm"
+$content = [System.IO.File]::ReadAllText("index_new.htm", [System.Text.Encoding]::UTF8)
+$content = $content.Replace("Crypto Fund Trader is an evaluation and educational platform designed", "This is an evaluation and educational platform designed")
+$content = $content.Replace("Our goal is to identify", "The goal is to identify")
+$content = $content.Replace("How does the Crypto Fund Trader business model work", "How does the platform's business model work")
+$content = $content.Replace("USER FRIENDLY TRADING SIMULATION PLATFORM", "USER-FRIENDLY TRADING SIMULATION PLATFORM")
+$content = $content.Replace("Crypto Fund Trader provides participants with exclusive access", "Participants receive exclusive access")
+$content = $content.Replace("by our internal criteria and", "by internal criteria and")
+$content = $content.Replace("discretion of Crypto Fund Trader.", "discretion of the platform.")
+$content = $content.Replace("At Crypto Fund Trader we fund with", "We fund with")
+$content = $content.Replace("We focus on evaluate the best traders", "We focus on evaluating the best traders")
+$content = $content.Replace("Crypto Fund Trader does not impose", "This platform does not impose")
+$content = $content.Replace("Crypto Fund Trader is not responsible", "This platform is not responsible")
+[System.IO.File]::WriteAllText("index_new.htm", $content, [System.Text.Encoding]::UTF8)
+Write-Host "Замены выполнены! Файл сохранен как index_new.htm" 
