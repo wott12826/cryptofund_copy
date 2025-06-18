@@ -71,6 +71,16 @@
                 }
             });
         });
+
+        // NEW: Click on trigger emulates click on title
+        document.querySelectorAll('.elementor-widget-cmsmasters-toggles__trigger').forEach(function(trigger) {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const title = this.closest('.elementor-widget-cmsmasters-toggles__title');
+                if (title) title.click();
+            });
+        });
     }
     
     // Initialize when DOM is ready
