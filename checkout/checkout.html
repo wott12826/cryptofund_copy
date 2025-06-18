@@ -2326,8 +2326,7 @@
 																					<tr>
 																						<th class="product-name">Product
 																						</th>
-																						<th class="product-total">
-																							Subtotal</th>
+																						
 																					</tr>
 																				</thead>
 																				<div id="selected-plan-info"></div>
@@ -2343,7 +2342,7 @@
 																						<th>Total</th>
 																						<td><strong><span
 																									class="woocommerce-Price-amount amount" id="total-amount"><bdi><span
-																											class="woocommerce-Price-currencySymbol">$</span>840.00</bdi></span></strong>
+																											class="woocommerce-Price-currencySymbol">$</span>0.00</bdi></span></strong>
 																						</td>
 																					</tr>
 
@@ -5750,12 +5749,12 @@
 			  </div>
 			`;
 			// Подставляем сумму в итог
-			const subtotal = document.getElementById('subtotal-value');
+			const subtotal = document.getElementById('subtotal-amount');
 			if (subtotal) {
 			  subtotal.textContent = `$${plan.fee}`;
 			}
 			// Аналогично для Total, если есть отдельный элемент
-			const total = document.getElementById('total-value');
+			const total = document.getElementById('total-amount');
 			if (total) {
 			  total.textContent = `$${plan.fee}`;
 			}
