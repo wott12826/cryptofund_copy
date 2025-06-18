@@ -1683,12 +1683,13 @@
 		  max-width: 100%;
 		  max-height: 100%;
 		}
-		.cmsmasters-widget-icon-list-items {
-  display: flex;
-  flex-direction: row;
-  gap: 16px; /* расстояние между иконками, по желанию */
-  align-items: center; /* выравнивание по вертикали */
-  justify-content: flex-start; /* или center/right по желанию */
+		#twitter-icon, #telegram-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px; /* последний можно убрать через :last-child */
+}
+#twitter-icon:last-child, #telegram-icon:last-child {
+  margin-right: 0;
 }
 	  </style>
 </head>
@@ -2550,7 +2551,7 @@
 													<div class="elementor-widget-container">
 														<ul class="cmsmasters-widget-icon-list-items">
 														  <li
-															class="cmsmasters-widget-icon-list-item active-icon-item active-link-item"
+															class="cmsmasters-widget-icon-list-item active-icon-item active-link-item" id="twitter-icon"
 														  >
 															<a
 															  href="https://x.com/VividTrade"
@@ -2615,7 +2616,7 @@
 														  
 														  
 														  <li
-															class="cmsmasters-widget-icon-list-item active-icon-item active-link-item"
+															class="cmsmasters-widget-icon-list-item active-icon-item active-link-item" id="telegram-icon"
 														  >
 															<a
 															  href="https://t.me/Vivid_Trade"
