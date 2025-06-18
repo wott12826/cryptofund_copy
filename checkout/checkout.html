@@ -2333,13 +2333,6 @@
 																				<div id="selected-plan-info"></div>
 																				<tfoot>
 
-																					<tr class="cart-subtotal">
-																						<th>Subtotal</th>
-																						<td><span
-																								class="woocommerce-Price-amount amount"><bdi><span
-																										class="woocommerce-Price-currencySymbol">$</span>840.00</bdi></span>
-																						</td>
-																					</tr>
 
 
 
@@ -2349,7 +2342,7 @@
 																					<tr class="order-total">
 																						<th>Total</th>
 																						<td><strong><span
-																									class="woocommerce-Price-amount amount"><bdi><span
+																									class="woocommerce-Price-amount amount" id="total-amount"><bdi><span
 																											class="woocommerce-Price-currencySymbol">$</span>840.00</bdi></span></strong>
 																						</td>
 																					</tr>
@@ -5749,13 +5742,23 @@
 		  if (plan) {
 			document.getElementById('selected-plan-info').innerHTML = `
 			  <div style="background:#222;padding:20px;margin-bottom:20px;color:#fff;border-radius:8px;max-width:400px;">
-				<b>Выбранный план:</b><br>
-				Тип: <span style='color:#ff00f5'>${plan.type}</span><br>
+				<b>Selected plan:</b><br>
+				Type: <span style='color:#ff00f5'>${plan.type}</span><br>
 				Account Size: <span style='color:#ff00f5'>$${Number(plan.size).toLocaleString()}</span><br>
 				One time fee: <span style='color:#ff00f5'>$${plan.fee}</span><br>
 				ID: <span style='color:#ff00f5'>${plan.id}</span>
 			  </div>
 			`;
+			// Подставляем сумму в итог
+			const subtotal = document.getElementById('subtotal-value');
+			if (subtotal) {
+			  subtotal.textContent = `$${plan.fee}`;
+			}
+			// Аналогично для Total, если есть отдельный элемент
+			const total = document.getElementById('total-value');
+			if (total) {
+			  total.textContent = `$${plan.fee}`;
+			}
 		  }
 		});
 		</script>
