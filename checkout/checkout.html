@@ -2330,77 +2330,7 @@
 																							Subtotal</th>
 																					</tr>
 																				</thead>
-																				<tbody>
-																					<tr class="cart_item">
-																						<td class="product-name">
-																							<div
-																								class="wcf-product-image">
-																								<a href="https://cryptofundtrader.com/checkout/#"
-																									rel="nofollow"
-																									class="wcf-remove-product cartflows-icon cartflows-circle-cross"
-																									data-id="10426"
-																									data-item-key="74dc1d355d1964e0b2ba64a1c4ce708a"
-																									data-product_id="136478"></a>
-																								<div
-																									class="wcf-product-name">
-																									$25.000 Evaluation -
-																									BYBIT</div>
-																							</div>&nbsp; <strong
-																								class="product-quantity">Г—&nbsp;1</strong>
-																						</td>
-																						<td class="product-total">
-																							<span
-																								class="woocommerce-Price-amount amount"><bdi><span
-																										class="woocommerce-Price-currencySymbol">$</span>240.00</bdi></span>
-																						</td>
-																					</tr>
-																					<tr class="cart_item">
-																						<td class="product-name">
-																							<div
-																								class="wcf-product-image">
-																								<a href="https://cryptofundtrader.com/checkout/#"
-																									rel="nofollow"
-																									class="wcf-remove-product cartflows-icon cartflows-circle-cross"
-																									data-id="11081"
-																									data-item-key="4a8de0d592c628af610994dd77043466"
-																									data-product_id="11083"></a>
-																								<div
-																									class="wcf-product-name">
-																									$50.000 Evaluation -
-																									MetaTrader 5</div>
-																							</div>&nbsp; <strong
-																								class="product-quantity">Г—&nbsp;1</strong>
-																						</td>
-																						<td class="product-total">
-																							<span
-																								class="woocommerce-Price-amount amount"><bdi><span
-																										class="woocommerce-Price-currencySymbol">$</span>360.00</bdi></span>
-																						</td>
-																					</tr>
-																					<tr class="cart_item">
-																						<td class="product-name">
-																							<div
-																								class="wcf-product-image">
-																								<a href="https://cryptofundtrader.com/checkout/#"
-																									rel="nofollow"
-																									class="wcf-remove-product cartflows-icon cartflows-circle-cross"
-																									data-id="10426"
-																									data-item-key="92ff3e4cc24020a1f739e1006971d660"
-																									data-product_id="10428"></a>
-																								<div
-																									class="wcf-product-name">
-																									$25.000 Evaluation -
-																									MetaTrader 5</div>
-																							</div>&nbsp; <strong
-																								class="product-quantity">Г—&nbsp;1</strong>
-																						</td>
-																						<td class="product-total">
-																							<span
-																								class="woocommerce-Price-amount amount"><bdi><span
-																										class="woocommerce-Price-currencySymbol">$</span>240.00</bdi></span>
-																						</td>
-																					</tr>
-																				</tbody>
+																				<div id="selected-plan-info"></div>
 																				<tfoot>
 
 																					<tr class="cart-subtotal">
@@ -5813,6 +5743,22 @@
 		}
 	</style>
 	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+		  const plan = JSON.parse(sessionStorage.getItem('selectedPlan'));
+		  if (plan) {
+			document.getElementById('selected-plan-info').innerHTML = `
+			  <div style="background:#222;padding:20px;margin-bottom:20px;color:#fff;border-radius:8px;max-width:400px;">
+				<b>Выбранный план:</b><br>
+				Тип: <span style='color:#ff00f5'>${plan.type}</span><br>
+				Account Size: <span style='color:#ff00f5'>$${Number(plan.size).toLocaleString()}</span><br>
+				One time fee: <span style='color:#ff00f5'>$${plan.fee}</span><br>
+				ID: <span style='color:#ff00f5'>${plan.id}</span>
+			  </div>
+			`;
+		  }
+		});
+		</script>
 	</body>
 
 </html>
