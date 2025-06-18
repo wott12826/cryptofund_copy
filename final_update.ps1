@@ -107,7 +107,7 @@ $newButton = @'
 														class="elementor-widget-cmsmasters-button__button-container-inner cmsmasters-with-percentage">
 														<a href="#programs"
 															class="cmsmasters-button-link elementor-widget-cmsmasters-button__button cmsmasters-icon-view- cmsmasters-icon-shape- cmsmasters-button-size-lg"
-															role="button" style="background-color: #f3cb45; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;"><span
+															role="button" style="background-color: #ff00f5; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;"><span
 																class="elementor-widget-cmsmasters-button__content-wrapper cmsmasters-align-icon-"><span
 																	class="elementor-widget-cmsmasters-button__text">Try Now</span></span></a>
 													</div>

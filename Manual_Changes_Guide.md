@@ -125,7 +125,7 @@ discretion of the platform.
                             <a href="#programs"
                                class="cmsmasters-button-link elementor-widget-cmsmasters-button__button cmsmasters-icon-view- cmsmasters-icon-shape- cmsmasters-button-size-lg"
                                role="button" 
-                               style="background-color: #f3cb45; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;">
+                               style="background-color: #ff00f5; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;">
                                 <span class="elementor-widget-cmsmasters-button__content-wrapper cmsmasters-align-icon-">
                                     <span class="elementor-widget-cmsmasters-button__text">Try Now</span>
                                 </span>
@@ -228,7 +228,7 @@ This platform is not responsible
 
 После всех изменений:
 
-1. **Анимация fancy text** должна работать с золотистым цветом #F3CB45
+1. **Анимация fancy text** должна работать с золотистым цветом #ff00f5
 2. **Заголовок** изменен на "TRADER EVALUATION PLATFORM"
 3. **Три кнопки** заменены на одну "Try Now"
 4. **Блок сертификатов** удален

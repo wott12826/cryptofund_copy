@@ -14,7 +14,7 @@
 
 .typing-text {
     display: inline-block;
-    color: #F3CB45 !important;
+    color: #ff00f5 !important;
 }
 
 .typed-cursor {
@@ -22,7 +22,7 @@
     margin-left: 3px;
     animation: blink 1s infinite;
     font-weight: normal;
-    color: #F3CB45 !important;
+    color: #ff00f5 !important;
 }
 
 @keyframes blink {

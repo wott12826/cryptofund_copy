@@ -203,7 +203,7 @@ This platform is not responsible
                             <a href="#programs"
                                class="cmsmasters-button-link elementor-widget-cmsmasters-button__button cmsmasters-icon-view- cmsmasters-icon-shape- cmsmasters-button-size-lg"
                                role="button" 
-                               style="background-color: #f3cb45; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;">
+                               style="background-color: #ff00f5; color: #000; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 8px;">
                                 <span class="elementor-widget-cmsmasters-button__content-wrapper cmsmasters-align-icon-">
                                     <span class="elementor-widget-cmsmasters-button__text">Try Now</span>
                                 </span>
@@ -244,7 +244,7 @@ This platform is not responsible
 
 После изменений откройте `index.htm` в браузере и проверьте:
 - [ ] Анимация "Trade like a whale/institution" работает
-- [ ] Цвет анимации золотистый (#F3CB45)  
+- [ ] Цвет анимации золотистый (#ff00f5)  
 - [ ] Вместо трех кнопок одна "Try Now"
 - [ ] Блок сертификатов удален
 - [ ] Все упоминания "Crypto Fund Trader" заменены

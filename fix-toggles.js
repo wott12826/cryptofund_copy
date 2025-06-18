@@ -61,7 +61,7 @@
             // Add hover effect
             newTitle.addEventListener('mouseenter', function() {
                 if (!this.classList.contains('active-toggle')) {
-                    this.style.color = '#f3cb45';
+                    this.style.color = '#ff00f5';
                 }
             });
             
