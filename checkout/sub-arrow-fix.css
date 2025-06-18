@@ -1,4 +1,6 @@
-/* Fix for sub-arrow styles */
+/* Complete sub-arrow styles from widget-nav-menu.min.css */
+
+/* Main sub-arrow styles */
 .elementor-nav-menu .sub-arrow {
 	line-height: 1;
 	padding: 10px 0 10px 10px;
@@ -27,12 +29,7 @@
 	width: .7em;
 }
 
-.elementor-nav-menu--dropdown .elementor-item.elementor-item-active,
-.elementor-nav-menu--dropdown .elementor-item.highlighted,
-.elementor-nav-menu--dropdown .elementor-item:hover {
-	background-color: rgba(0, 0, 0, 0.05);
-}
-
+/* Dropdown sub-arrow styles */
 .elementor-nav-menu--dropdown .sub-arrow .e-font-icon-svg,
 .elementor-nav-menu--dropdown .sub-arrow i {
 	transform: rotate(-90deg);
@@ -42,4 +39,105 @@
 	fill: currentColor;
 	height: 1em;
 	width: 1em;
+}
+
+/* Dropdown item styles */
+.elementor-nav-menu--dropdown .elementor-item.elementor-item-active,
+.elementor-nav-menu--dropdown .elementor-item.highlighted,
+.elementor-nav-menu--dropdown .elementor-item:focus,
+.elementor-nav-menu--dropdown .elementor-item:hover,
+.elementor-sub-item.elementor-item-active,
+.elementor-sub-item.highlighted,
+.elementor-sub-item:focus,
+.elementor-sub-item:hover {
+	background-color: #3f444b;
+	color: #fff;
+}
+
+/* Additional nav menu styles */
+.elementor-nav-menu {
+	position: relative;
+	z-index: 2;
+}
+
+.elementor-nav-menu:after {
+	content: " ";
+	display: block;
+	height: 0;
+	font: 0/0 serif;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.elementor-nav-menu,
+.elementor-nav-menu li,
+.elementor-nav-menu ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.elementor-nav-menu ul {
+	display: none;
+}
+
+.elementor-nav-menu a,
+.elementor-nav-menu li {
+	position: relative;
+}
+
+.elementor-nav-menu li {
+	border-width: 0;
+}
+
+.elementor-nav-menu a {
+	display: flex;
+	align-items: center;
+}
+
+.elementor-nav-menu a,
+.elementor-nav-menu a:focus,
+.elementor-nav-menu a:hover {
+	padding: 10px 20px;
+	line-height: 20px;
+}
+
+.elementor-nav-menu a.current {
+	background: #1f2124;
+	color: #fff;
+}
+
+.elementor-nav-menu a.disabled {
+	cursor: not-allowed;
+	color: #88909b;
+}
+
+/* Dropdown menu styles */
+.elementor-nav-menu--dropdown {
+	background-color: #fff;
+	font-size: 13px;
+}
+
+.elementor-nav-menu--dropdown a {
+	color: #33373d;
+}
+
+.elementor-nav-menu--dropdown a.current {
+	background: #1f2124;
+	color: #fff;
+}
+
+.elementor-nav-menu--dropdown a.disabled {
+	color: #b3b3b3;
+}
+
+ul.elementor-nav-menu--dropdown a,
+ul.elementor-nav-menu--dropdown a:focus,
+ul.elementor-nav-menu--dropdown a:hover {
+	text-shadow: none;
+	border-left: 8px solid transparent;
 } 
