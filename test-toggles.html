@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Toggles</title>
+    <style>
+        .elementor-widget-cmsmasters-toggles__list {
+            outline: none;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__item {
+            border: solid #ddd;
+            border-width: 0 0 1px;
+            transition: background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title {
+            color: #333;
+            border: 0 solid #ddd;
+            outline: none;
+            cursor: pointer;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 15px 20px;
+            transition: background-color .3s ease-in-out, border-color .3s ease-in-out, border-radius .3s ease-in-out;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title.active-toggle,
+        .elementor-widget-cmsmasters-toggles__title.active-toggle a,
+        .elementor-widget-cmsmasters-toggles__title:hover,
+        .elementor-widget-cmsmasters-toggles__title:hover a {
+            color: #f3cb45;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title.active-toggle .elementor-widget-cmsmasters-toggles__trigger-closed {
+            display: none;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title.active-toggle .elementor-widget-cmsmasters-toggles__trigger-opened {
+            display: block;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title a {
+            color: #333;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title > span {
+            display: block;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__trigger {
+            display: inline-block;
+            transition: color .3s ease-in-out, fill .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__trigger .elementor-widget-cmsmasters-toggles__trigger-closed {
+            display: block;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__trigger .elementor-widget-cmsmasters-toggles__trigger-opened {
+            display: none;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__title-link {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__content {
+            display: none;
+            min-height: auto !important;
+            padding: 15px 20px;
+            border: 0 solid #ddd;
+        }
+        
+        .elementor-widget-cmsmasters-toggles__content > p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="elementor-widget-container">
+        <div class="elementor-widget-cmsmasters-toggles__list" role="tablist">
+            <div class="elementor-widget-cmsmasters-toggles__item">
+                <h6 id="elementor-tab-title-1321" class="elementor-widget-cmsmasters-toggles__title" data-tab="1" role="tab" aria-controls="elementor-widget-cmsmasters-toggles__content-1321" aria-expanded="false">
+                    <a class="elementor-widget-cmsmasters-toggles__title-link cmsmasters_enable_trigger_icon" href="#">
+                        <span class="elementor-widget-cmsmasters-toggles__title-text">WHAT IS THE CRYPTO FUND TRADER ACCOUNT?</span>
+                    </a>
+                    <span class="elementor-widget-cmsmasters-toggles__trigger" aria-hidden="true">
+                        <span class="elementor-widget-cmsmasters-toggles__trigger-closed">
+                            <i class="fas fa-angle-down">▼</i>
+                        </span>
+                        <span class="elementor-widget-cmsmasters-toggles__trigger-opened">
+                            <i class="fas fa-angle-up">▲</i>
+                        </span>
+                    </span>
+                </h6>
+                <div id="elementor-widget-cmsmasters-toggles__content-1321" class="elementor-widget-cmsmasters-toggles__content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-1321">
+                    <p>At Crypto Fund Trader we fund with up to $300,000 of virtual funds to traders who are able to pass our 2-phases or 1-phase evaluations. At the final phase you can get a performance-based reward.</p>
+                    <p>You must purchase the evaluation you want in our <span style="color: #f3cb45"><a href="#programs">programs</a></span> section.</p>
+                </div>
+            </div>
+            <div class="elementor-widget-cmsmasters-toggles__item">
+                <h6 id="elementor-tab-title-1322" class="elementor-widget-cmsmasters-toggles__title" data-tab="2" role="tab" aria-controls="elementor-widget-cmsmasters-toggles__content-1322" aria-expanded="false">
+                    <a class="elementor-widget-cmsmasters-toggles__title-link cmsmasters_enable_trigger_icon" href="#">
+                        <span class="elementor-widget-cmsmasters-toggles__title-text">HOW TO START?</span>
+                    </a>
+                    <span class="elementor-widget-cmsmasters-toggles__trigger" aria-hidden="true">
+                        <span class="elementor-widget-cmsmasters-toggles__trigger-closed">
+                            <i class="fas fa-angle-down">▼</i>
+                        </span>
+                        <span class="elementor-widget-cmsmasters-toggles__trigger-opened">
+                            <i class="fas fa-angle-up">▲</i>
+                        </span>
+                    </span>
+                </h6>
+                <div id="elementor-widget-cmsmasters-toggles__content-1322" class="elementor-widget-cmsmasters-toggles__content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-1322">
+                    <p>To start, you must select the desired test in the program section. Once your purchase is complete, you will receive your credentials within a few minutes. Then you will be able to start trading and pass the evaluation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleTitles = document.querySelectorAll('.elementor-widget-cmsmasters-toggles__title');
+            
+            toggleTitles.forEach(function(title) {
+                title.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const isActive = this.classList.contains('active-toggle');
+                    const content = document.getElementById(this.getAttribute('aria-controls'));
+                    
+                    // Close all other toggles
+                    toggleTitles.forEach(function(otherTitle) {
+                        if (otherTitle !== title) {
+                            otherTitle.classList.remove('active-toggle');
+                            otherTitle.setAttribute('aria-expanded', 'false');
+                            const otherContent = document.getElementById(otherTitle.getAttribute('aria-controls'));
+                            if (otherContent) {
+                                otherContent.style.display = 'none';
+                            }
+                        }
+                    });
+                    
+                    // Toggle current toggle
+                    if (isActive) {
+                        this.classList.remove('active-toggle');
+                        this.setAttribute('aria-expanded', 'false');
+                        if (content) {
+                            content.style.display = 'none';
+                        }
+                    } else {
+                        this.classList.add('active-toggle');
+                        this.setAttribute('aria-expanded', 'true');
+                        if (content) {
+                            content.style.display = 'block';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
