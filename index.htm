@@ -9035,11 +9035,11 @@
                                                                 />
                                                               </div>
 
-                                                              <a href="checkout/checkout.html" class="single_add_to_cart_button elementor-button button alt wp-element-button" style="display:inline-block;text-decoration:none;">
-                                                                <span class="elementor-button-content-wrapper">
-                                                                  <span class="elementor-button-text">Start Evaluation</span>
-                                                                </span>
-                                                              </a>
+                                                              <button href="checkout/checkout.html" type="button" class="single_add_to_cart_button elementor-button button alt wp-element-button start-evaluation-btn"
+  style="display:inline-block;text-decoration:none;"
+  data-id="6c0a5174" data-type="Student" data-size="5000" data-fee="58">
+  <span class="elementor-button-content-wrapper"><span class="elementor-button-text">Start Evaluation</span></span>
+</button>
 
                                                               <script
                                                                 type="application/javascript"
@@ -18118,6 +18118,20 @@
 
       gtag("config", "G-SRLMF0N24J");
     </script>
+	<script>
+		document.querySelectorAll('.start-evaluation-btn').forEach(btn => {
+		  btn.addEventListener('click', function() {
+			const plan = {
+			  id: this.dataset.id,
+			  type: this.dataset.type,
+			  size: this.dataset.size,
+			  fee: this.dataset.fee
+			};
+			sessionStorage.setItem('selectedPlan', JSON.stringify(plan));
+			window.location.href = '/checkout/checkout.html';
+		  });
+		});
+		</script>
   </body>
 </html>
 
