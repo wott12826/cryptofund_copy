@@ -23,11 +23,8 @@ foreach ($file in $files) {
         # Replace relative paths
         $content = $content -replace 'wp-content/uploads/2024/03/design-thrid-image-cft-[^\"\s]+', 'wp-content/uploads/2025/06/third_image.png'
         
-        # Replace absolute paths (old)
-        $content = $content -replace 'wp-content/uploads/2024/03/design-thrid-image-cft-[^\"\s]+', 'wp-content/uploads/2025/06/third_image.png'
-        
-        # Replace absolute paths (new, ошибочная замена)
-        $content = $content -replace 'wp-content/uploads/2025/06/third_image.png', 'wp-content/uploads/2025/06/third_image.png'
+        # Replace absolute paths
+        $content = $content -replace 'https://cryptofundtrader.com/wp-content/uploads/2024/03/design-thrid-image-cft-[^\"\s]+', 'wp-content/uploads/2025/06/third_image.png'
         
         # Write back to file
         Set-Content $file $content -Encoding UTF8
