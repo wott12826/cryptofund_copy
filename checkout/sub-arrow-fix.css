@@ -1,0 +1,45 @@
+/* Fix for sub-arrow styles */
+.elementor-nav-menu .sub-arrow {
+	line-height: 1;
+	padding: 10px 0 10px 10px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	display: flex;
+	align-items: center;
+}
+
+.elementor-nav-menu .sub-arrow i {
+	pointer-events: none;
+}
+
+.elementor-nav-menu .sub-arrow .fa.fa-chevron-down,
+.elementor-nav-menu .sub-arrow .fas.fa-chevron-down {
+	font-size: .7em;
+}
+
+.elementor-nav-menu .sub-arrow .e-font-icon-svg {
+	height: 1em;
+	width: 1em;
+}
+
+.elementor-nav-menu .sub-arrow .e-font-icon-svg.fa-svg-chevron-down {
+	height: .7em;
+	width: .7em;
+}
+
+.elementor-nav-menu--dropdown .elementor-item.elementor-item-active,
+.elementor-nav-menu--dropdown .elementor-item.highlighted,
+.elementor-nav-menu--dropdown .elementor-item:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.elementor-nav-menu--dropdown .sub-arrow .e-font-icon-svg,
+.elementor-nav-menu--dropdown .sub-arrow i {
+	transform: rotate(-90deg);
+}
+
+.elementor-nav-menu--dropdown .sub-arrow .e-font-icon-svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
+} 
