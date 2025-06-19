@@ -22,15 +22,85 @@ $modalJS = @"
 			}
 		}
 
+		// Field validation functionality
+		function checkAllFieldsFilled() {
+			const requiredFields = [
+				'billing_first_name',
+				'billing_last_name', 
+				'billing_country',
+				'billing_state',
+				'billing_city',
+				'billing_address_1',
+				'billing_phone',
+				'billing_email'
+			];
+			
+			const placeOrderButton = document.getElementById('place_order');
+			
+			// Check if all required fields have values
+			const allFilled = requiredFields.every(fieldId => {
+				const field = document.getElementById(fieldId);
+				return field && field.value.trim() !== '';
+			});
+			
+			// Enable/disable button based on validation
+			if (placeOrderButton) {
+				if (allFilled) {
+					placeOrderButton.disabled = false;
+					placeOrderButton.style.opacity = '1';
+					placeOrderButton.style.cursor = 'pointer';
+				} else {
+					placeOrderButton.disabled = true;
+					placeOrderButton.style.opacity = '0.5';
+					placeOrderButton.style.cursor = 'not-allowed';
+				}
+			}
+		}
+
+		// Add event listeners to all required fields
+		function setupFieldValidation() {
+			const requiredFields = [
+				'billing_first_name',
+				'billing_last_name', 
+				'billing_country',
+				'billing_state',
+				'billing_city',
+				'billing_address_1',
+				'billing_phone',
+				'billing_email'
+			];
+			
+			requiredFields.forEach(fieldId => {
+				const field = document.getElementById(fieldId);
+				if (field) {
+					field.addEventListener('input', checkAllFieldsFilled);
+					field.addEventListener('change', checkAllFieldsFilled);
+					field.addEventListener('blur', checkAllFieldsFilled);
+				}
+			});
+		}
+
 		// Add event listener to the Place Order button
 		document.addEventListener('DOMContentLoaded', function() {
 			const placeOrderButton = document.getElementById('place_order');
 			if (placeOrderButton) {
+				// Initially disable the button
+				placeOrderButton.disabled = true;
+				placeOrderButton.style.opacity = '0.5';
+				placeOrderButton.style.cursor = 'not-allowed';
+				
+				// Add click event listener
 				placeOrderButton.addEventListener('click', function(e) {
 					e.preventDefault(); // Prevent form submission
 					showModal();
 				});
 			}
+			
+			// Setup field validation
+			setupFieldValidation();
+			
+			// Initial check
+			setTimeout(checkAllFieldsFilled, 100);
 		});
 "@
 
@@ -138,4 +208,4 @@ $content = $content -replace '</script>', $replacement
 # Save the modified content
 $content | Set-Content checkout/checkout.html -Encoding UTF8
 
-Write-Host "Modal functionality has been added to checkout.html" 
+Write-Host "Modal functionality and field validation have been added to checkout.html" 
