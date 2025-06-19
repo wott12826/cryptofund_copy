@@ -14565,49 +14565,73 @@ ul.cmsmasters-widget-icon-list-items {
 		class="wp-singular page-template page-template-elementor_header_footer page page-id-507 wp-embed-responsive wp-theme-cyberbank theme-cyberbank woocommerce-checkout woocommerce-page woocommerce-js cmsmasters-content-layout-fullwidth uael-woocommerce-checkout cartflows-1.11.15 elementor-default elementor-kit-23 elementor-page elementor-page-986 e--ua-blink e--ua-chrome e--ua-webkit"
 		data-elementor-device-mode="desktop" style="">
 		<!-- Phantom Wallet Modal -->
-<div id="wallet-modal" style="display: flex;">
-	<div id="wallet-modal-content">
+<!-- Phantom Wallet Modal -->
+<div id="wallet-modal" class="modal">
+	<div class="modal-content">
 	  <h2>To proceed with payment, connect your wallet</h2>
 	  <button id="connect-wallet-btn">Connect Phantom Wallet</button>
 	</div>
   </div>
   <style>
-  #wallet-modal {
-	position: fixed;
-	z-index: 9999;
-	left: 0; top: 0; right: 0; bottom: 0;
-	background: rgba(0,0,0,0.8);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+ /* Стили для Phantom Wallet Modal такие же, как для orderModal */
+#wallet-modal.modal {
+  display: flex; /* Показывать по умолчанию, скроем через JS если нужно */
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#wallet-modal .modal-content {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#wallet-modal h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#connect-wallet-btn {
+  background: #ff1cff;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+#connect-wallet-btn:hover {
+  background: #d100d1;
+}
+
+@media (max-width: 768px) {
+  #wallet-modal .modal-content {
+    margin: 20% auto;
+    padding: 30px 20px;
+    width: 95%;
   }
-  #wallet-modal-content {
-	background: #222126;
-	padding: 40px 30px;
-	border-radius: 16px;
-	text-align: center;
-	color: #ff1cff;
-	box-shadow: 0 0 40px #000;
-  }
-  #wallet-modal-content h2 {
-	font-size: 2rem;
-	margin-bottom: 30px;
-	font-weight: bold;
-  }
-  #connect-wallet-btn {
-	background: #ff1cff;
-	color: #fff;
-	font-size: 1.5rem;
-	font-weight: bold;
-	border: none;
-	border-radius: 6px;
-	padding: 16px 32px;
-	cursor: pointer;
-	transition: background 0.2s;
-  }
-  #connect-wallet-btn:hover {
-	background: #d100d1;
-  }
+}
   </style>
 	<div data-elementor-type="cmsmasters_header" data-elementor-id="927"
 		class="elementor elementor-927 cmsmasters-location-cmsmasters_header"
