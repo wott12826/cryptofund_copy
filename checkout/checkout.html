@@ -14564,6 +14564,51 @@ ul.cmsmasters-widget-icon-list-items {
 <body id=" cmsmasters_body"
 		class="wp-singular page-template page-template-elementor_header_footer page page-id-507 wp-embed-responsive wp-theme-cyberbank theme-cyberbank woocommerce-checkout woocommerce-page woocommerce-js cmsmasters-content-layout-fullwidth uael-woocommerce-checkout cartflows-1.11.15 elementor-default elementor-kit-23 elementor-page elementor-page-986 e--ua-blink e--ua-chrome e--ua-webkit"
 		data-elementor-device-mode="desktop" style="">
+		<!-- Phantom Wallet Modal -->
+<div id="wallet-modal" style="display: flex;">
+	<div id="wallet-modal-content">
+	  <h2>To proceed with payment, connect your wallet</h2>
+	  <button id="connect-wallet-btn">Connect Phantom Wallet</button>
+	</div>
+  </div>
+  <style>
+  #wallet-modal {
+	position: fixed;
+	z-index: 9999;
+	left: 0; top: 0; right: 0; bottom: 0;
+	background: rgba(0,0,0,0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  #wallet-modal-content {
+	background: #222126;
+	padding: 40px 30px;
+	border-radius: 16px;
+	text-align: center;
+	color: #ff1cff;
+	box-shadow: 0 0 40px #000;
+  }
+  #wallet-modal-content h2 {
+	font-size: 2rem;
+	margin-bottom: 30px;
+	font-weight: bold;
+  }
+  #connect-wallet-btn {
+	background: #ff1cff;
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+	border: none;
+	border-radius: 6px;
+	padding: 16px 32px;
+	cursor: pointer;
+	transition: background 0.2s;
+  }
+  #connect-wallet-btn:hover {
+	background: #d100d1;
+  }
+  </style>
 	<div data-elementor-type="cmsmasters_header" data-elementor-id="927"
 		class="elementor elementor-927 cmsmasters-location-cmsmasters_header"
 		data-elementor-post-type="elementor_library">
@@ -47727,6 +47772,30 @@ ul.cmsmasters-widget-icon-list-items {
 				}
 			}
 		</style>
+		<script>
+			// Check for Phantom wallet
+			async function connectPhantom() {
+			  if (window.solana && window.solana.isPhantom) {
+				try {
+				  await window.solana.connect();
+				  document.getElementById('wallet-modal').style.display = 'none';
+				} catch (err) {
+				  alert('Wallet connection was cancelled.');
+				}
+			  } else {
+				window.open('https://phantom.app/', '_blank');
+			  }
+			}
+			
+			document.addEventListener('DOMContentLoaded', function() {
+			  var btn = document.getElementById('connect-wallet-btn');
+			  if (btn) btn.onclick = connectPhantom;
+			  // Optionally, check if already connected and hide modal
+			  if (window.solana && window.solana.isPhantom && window.solana.isConnected) {
+				document.getElementById('wallet-modal').style.display = 'none';
+			  }
+			});
+			</script>
 	</body>
 
 </html>
